@@ -11,6 +11,46 @@
 // ☐ Exibir total, quantidade útil, percentual e classificação.
 
 
+const entrada = require("readline-sync");
+
+function calcularAproveitamento( util, total) {
+    return (util / total) * 100;
+}
+
+function classificarAproveitamento(percentual) {
+    if (percentual >= 90) {
+        return "EXCELENTE";
+    } else if (percentual >= 75) {
+        return "ADEQUADO";
+    } else {
+        return "REVISAR PROCESSO";
+    }
+}
+
+const QuantidadeUtil = entrada.questionFloat("Qual e a quantidade util? ");
+const QuantidadeTotal = entrada.questionFloat("Qual e a quantidade total? ");
+
+
+const aproveitamento = calcularAproveitamento(QuantidadeUtil, QuantidadeTotal);
+const classificacao = classificarAproveitamento(aproveitamento);
+
+console.log(`Quantidade util: ${QuantidadeUtil}`);
+console.log(`Quantidade total: ${QuantidadeTotal}`);
+console.log(`Aproveitamento: ${aproveitamento.toFixed(2)}%`);
+console.log(`Classificacao: ${classificacao}`);
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
